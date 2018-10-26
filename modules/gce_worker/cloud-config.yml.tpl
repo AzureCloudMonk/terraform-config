@@ -31,6 +31,10 @@ write_files:
   encoding: b64
   owner: 'travis:travis'
   path: /var/tmp/gce.json
+- content: '${base64encode(gce_accounts_json_b64)}'
+  encoding: b64
+  owner: 'travis:travis'
+  path: /var/tmp/gce_accounts_b64.json
 - content: '${base64encode(file("${here}/cloud-init.bash"))}'
   encoding: b64
   path: /var/lib/cloud/scripts/per-instance/99-travis-worker-cloud-init
